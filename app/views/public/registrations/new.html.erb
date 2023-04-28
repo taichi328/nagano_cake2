@@ -1,29 +1,139 @@
-<h2>Sign up</h2>
-
+<%= render 'public/list' %>
+<h3>新規会員登録</h3>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="mt-3">
+  <div class="row">
+    <div class="col-4">
+      <h3>名前</h3>
+    </div>
+    <div class="col-4">
+      <div class="field">
+        <%= f.label :first_name, "(姓)" %>
+        <%= f.text_field :first_name, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="field">
+        <%= f.label :last_name, "(名)" %>
+        <%= f.text_field :last_name, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="row">
+    <div class="col-4">
+      <h3>フリガナ</h3>
+    </div>
+    <div class="col-4">
+      <div class="field">
+        <%= f.label :first_name, "(セイ)" %>
+        <%= f.text_field :first_name, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="field">
+        <%= f.label :last_name, "(メイ)" %>
+        <%= f.text_field :last_name, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="row">
+    <div class="col-4">
+      <h3>メールアドレス</h3>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="row">
+    <div class="col-4">
+      <h4>郵便番号(ハイフンなし)</h4>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :postal_code %>
+        <%= f.text_field :postal_code, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>住所</h3>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :address %>
+        <%= f.text_field :address, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>電話番号</h3>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :number %>
+        <%= f.text_field :telephone_number, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h4>パスワード(6文字以上)</h4>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h4>パスワード(確認用)</h4>
+    </div>
+    <div class="col-8">
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autofocus: true, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4 mx-auto mt-1">
+      <div class="actions">
+        <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
+      </div>
+    </div>
   </div>
 <% end %>
 
+  <div class="row">
+    <div class="col-4 mt-3">
+      <h3>すでに登録済みの方</h3>
+    </div>
+    <div class="col-8">
+
+    </div>
+  </div>
+
 <%= render "public/shared/links" %>
+</div>

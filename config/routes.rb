@@ -7,5 +7,47 @@ devise_for :customers,skip: [:passwords], controllers: {
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
-root to: "public/homes#top"
+  root to: "public/homes#top"
+  get "about" => "public/homes#about"
+  
+  namespace :public do
+    resources :items, only: [:index, :show]
+  end
+
+  namespace :public do
+    resources :customers, only: [:show, :edit, :update] do
+      collection do
+        get 'check'
+        patch 'withdraw'
+      end
+    end
+  end
+
+  namespace :public do
+    resources :cart_items, only: [:index, :update, :destroy, :create] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
+  end
+
+  namespace :public do
+    resources :orders, only: [:index, :new, :show, :create] do
+      collection do
+        get 'complete'
+        post 'check'
+      end
+    end
+  end
+  
+  get "admin" => "admin#top"
+  namespace :admin do
+    resources :items
+  end
+  namespace :admin do
+    resources :customers
+  end
+  namespace :admin do
+    resources :orders, only: [:show]
+  end
 end
