@@ -30,14 +30,14 @@
     </div>
     <div class="col-4">
       <div class="field">
-        <%= f.label :first_name, "(セイ)" %>
-        <%= f.text_field :first_name, autofocus: true, required: true, class: 'form-control' %>
+        <%= f.label :first_name_kana, "(セイ)" %>
+        <%= f.text_field :first_name_kana, autofocus: true, required: true, class: 'form-control' %>
       </div>
     </div>
     <div class="col-4">
       <div class="field">
-        <%= f.label :last_name, "(メイ)" %>
-        <%= f.text_field :last_name, autofocus: true, required: true, class: 'form-control' %>
+        <%= f.label :last_name_kana, "(メイ)" %>
+        <%= f.text_field :last_name_kana, autofocus: true, required: true, class: 'form-control' %>
       </div>
     </div>
   </div>
@@ -130,10 +130,7 @@
     <div class="col-4 mt-3">
       <h3>すでに登録済みの方</h3>
     </div>
-    <div class="col-8">
-
-    </div>
   </div>
-
-<%= render "public/shared/links" %>
+  
+  <%= render "public/shared/links" %>
 </div>

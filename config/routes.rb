@@ -9,7 +9,10 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 }
   root to: "public/homes#top"
   get "about" => "public/homes#about"
-  
+  get "customers/my_page" => "public/customers#show"
+  get "customers/information/edit" => "public/customers#edit"
+  patch "customers" => "public/customers#update"
+
   namespace :public do
     resources :items, only: [:index, :show]
   end
@@ -39,7 +42,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
       end
     end
   end
-  
+
   get "admin" => "admin#top"
   namespace :admin do
     resources :items
