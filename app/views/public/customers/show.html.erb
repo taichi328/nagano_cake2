@@ -1,1 +1,56 @@
-<h1>マイページ</h1>
+<%= render 'public/list' %>
+<div class="container">
+　<div class="row">
+　  <div class="col-4">
+　    <h3>マイページ</h3>
+　  </div>
+　</div>
+
+　<div class="row">
+　  <div class="col-2">
+　    <strong>登録情報</strong>
+　  </div>
+　  <div class="col-2">
+　    <a class="btn btn-success" href="/customers/information/edit" role="button">編集する</a>
+　  </div>
+　</div>
+
+　<table class="table">
+　  <tbody>
+　    <tr>
+　      <td>氏名</td>
+　      <td><%= current_customer.first_name %>　<%= current_customer.last_name %></td>
+　    </tr>
+　    <tr>
+　      <td>カナ</td>
+　      <td><%= current_customer.first_name_kana %>　<%= current_customer.last_name_kana %></td>
+　    </tr>
+　    <tr>
+　      <td>郵便番号</td>
+　      <td><%= current_customer.postal_code %></td>
+　    </tr>
+　    <tr>
+　      <td>住所</td>
+　      <td><%= current_customer.address %></td>
+　    </tr>
+　    <tr>
+　      <td>電話番号</td>
+　      <td><%= current_customer.telephone_number %></td>
+　    </tr>
+　    <tr>
+　      <td>メールアドレス</td>
+　      <td><%= current_customer.email %></td>
+　    </tr>
+　  </tbody>
+　</table>
+
+　<div class="row">
+　  <div class="col-2">
+　    <strong>注文履歴</strong>
+　  </div>
+　  <div class="col-2">
+　    <
+　  </div>
+　</div>
+
+</div>
