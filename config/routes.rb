@@ -18,7 +18,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   end
 
   namespace :public do
-    resources :customers, only: [:show, :edit, :update] do
+    resources :customers, only: [:show] do
       collection do
         get 'check'
         patch 'withdraw'
