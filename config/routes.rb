@@ -18,7 +18,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   end
 
   namespace :public do
-    resources :customers, only: [:show] do
+    resources :customers, only: [:show, :edit, :update] do
       collection do
         get 'check'
         patch 'withdraw'
@@ -43,7 +43,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     end
   end
 
-  get "admin" => "admin#top"
+  get "admin" => "admin/homes#top"
   namespace :admin do
     resources :items
   end

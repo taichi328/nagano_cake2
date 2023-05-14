@@ -1,0 +1,33 @@
+<%= render 'admin/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <h5>会員一覧</h5>
+    </div>
+  </div>
+
+  <% @customers.each do |customer| %>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>会員ID</th>
+          <th>氏名</th>
+          <th>メールアドレス</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><%= customer.id %></th>
+          <th>
+            
+          </th>
+          <th><%= customer.email %></th>
+          <th><%= customer.is_deleted %></th>
+        </tr>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<%= render 'admin/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <h5>商品一覧</h5>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-success rounded-circle p-0" style="width:2rem;height:2rem;" href="/admin/items/new" role="button">+</a>
+    </div>
+  </div>
+
+  <% @items.each do |item| %>
+
+  <p>商品ID：<%= item.id %></p>
+  <p>商品名：<%= item.name %></p>
+  <p>税抜価格：<%= item.price %></p>
+
+  <% end %>
+</div>

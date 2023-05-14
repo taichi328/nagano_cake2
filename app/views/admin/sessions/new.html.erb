@@ -1,14 +1,14 @@
-<%= render 'public/list' %>
-<h2>Log in</h2>
+<%= render 'admin/list' %>
 
+<h2>管理者ログイン</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container"></div>
     <div class="row mt-3 text-center">
-      <div class="col-6">
-        <h3>メールアドレス</h3>
+      <div class="col-5">
+        メールアドレス
       </div>
-      <div class="col-6">
+      <div class="col-5">
         <div class="field">
           <%= f.email_field :email, autofocus: true, required: true, class: 'form-control' %>
         </div>
@@ -16,10 +16,10 @@
     </div>
 
     <div class="row mt-3 text-center">
-      <div class="col-6">
-        <h3>パスワード</h3>
+      <div class="col-5">
+        パスワード
       </div>
-      <div class="col-6">
+      <div class="col-5">
         <div class="field">
           <%= f.password_field :password, autofocus: true, required: true, class: 'form-control' %>
         </div>

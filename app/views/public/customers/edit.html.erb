@@ -13,7 +13,7 @@
     </p>
     <div class="col-3">
       <div class="form-group">
-          <%= f.text_field :first_name, autofocus: true %>
+          <%= f.text_field :first_name, autofocus: true, id:"inputName" %>
       </div>
     </div>
     <div class="col-3">
@@ -78,7 +78,7 @@
     </div>
     <div class="col-3">
       <div class="form-group">
-        <%= f.text_field :email %>
+        <%= f.email_field :email %>
       </div>
     </div>
   </div>
@@ -87,7 +87,12 @@
     <div class="col-3 mx-auto">
       <%= f.submit "編集内容を保存する" %>
     </div>
+    <div class="col-3 mx-auto">
+      <a class="btn btn-success" href="/public/customers/check" role="button">退会する</a>
+    </div>
   </div>
+
+
 
   <% end %>
 </div>
