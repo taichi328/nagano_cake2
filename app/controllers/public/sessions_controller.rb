@@ -33,10 +33,12 @@ class Public::SessionsController < Devise::SessionsController
 
   return if !@customer
     if @customer.valid_password?(params[:customer][:password])
-      false && false
-      
-    else
+      true && true == true
       redirect new_customer_registration_path
+    else
+      false && false == false
+      true && false == false
+      false && true == false
     end
   end
 end
