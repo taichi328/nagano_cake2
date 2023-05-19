@@ -1,1 +1,21 @@
-index
+<%= render 'public/list' %>
+
+<div class="container">
+  <div class="row">
+    <h3><strong>商品一覧</strong></h3>
+  </div>
+
+  <% @items.each do |item| %>
+  <div class="row">
+    <div class="d-flex">
+      <div class="col-3">
+        <%= link_to public_item_path(item.id) do %>
+          <p><%= image_tag item.get_image %></p>
+        <% end %>
+        <p><%= item.name %></p>
+        <p>¥<%= item.price %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

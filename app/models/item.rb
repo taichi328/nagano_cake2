@@ -9,4 +9,7 @@ class Item < ApplicationRecord
     end
     image
   end
+  
+  has_many :cart_items, dependent: :destroy
+  has_many :order_datails, dependent: :destroy
 end

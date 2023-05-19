@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <% @customers.each do |customer| %>
+
   <div class="row">
     <table class="table">
       <thead>
@@ -17,15 +17,14 @@
           <th>ステータス</th>
         </tr>
       </thead>
+      <% @customers.each do |customer| %>
       <tbody>
-        <tr>
-          <th><%= customer.id %></th>
-          <th><%= customer.first_name %><%= customer.last_name %></th>
-          <th><%= customer.email %></th>
-          <th><%= customer.is_deleted %></th>
-        </tr>
+        <td><%= customer.id %></td>
+        <td><%= link_to customer.first_name, admin_customer_path(customer.id) %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.is_deleted %></td>
       </tbody>
+      <% end %>
     </table>
-    <% end %>
   </div>
 </div>

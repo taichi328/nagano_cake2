@@ -1,0 +1,51 @@
+<%= render 'admin/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h3>商品編集</h3>
+    </div>
+  </div>
+
+  <%= form_with model: @item, url: admin_item_path do |f| %>
+  <div class="row">
+    <div class="col-1">
+        商品画像
+      </div>
+      <div class="col-10">
+        <%= f.file_field :image, placeholder: "画像", accept: "image/*" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+        商品名
+      </div>
+      <div class="col-10 mt-1">
+        <p><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前" %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+        商品説明
+      </div>
+      <div class="col-10">
+        <p><%= f.text_area :introduction, autofocus: true %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+        税抜価格
+      </div>
+      <div class="col-10">
+        <p><%= f.text_field :price, autofocus: true %>円</p>
+      </div>
+    </div>
+
+    <%= f.submit "変更を保存" %>
+  <% end %>
+  </div>
+
+
+</div>
