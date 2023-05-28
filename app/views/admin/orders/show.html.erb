@@ -1,0 +1,23 @@
+<%= render 'admin/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h4>注文履歴詳細</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <p><strong>購入者</strong></p>
+      <p><strong>注文日</strong></p>
+      <p><strong>配送先</strong></p>
+      <p><strong>支払方法</strong></p>
+    </div>
+    <div class="col-6">
+      <p><%= link_to @customer.full_name, admin_customer_path(cart_item.id) %></p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+</div>

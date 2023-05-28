@@ -1,1 +1,33 @@
 <%= render 'public/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <div class="mt-3">
+        <%= image_tag @item.get_image, class: "img-fluid" %>
+      </div>
+    </div>
+
+    <div class="col-10">
+      <div class="mt-3">
+        <strong><%= @item.name %></strong>
+        </br><%= @item.introduction %>
+        </br>
+        </br><strong>¥<%= @item.price %></strong>
+      </div>
+    </div>
+  </div>
+
+  <%= form_with(model: @cart_item, url: public_cart_items_path, method: :post, local: true) do |f| %>
+  <div class="row">
+    <div class="col-2">
+
+    </div>
+    <div class="col-10">
+      数量
+      <%= f.select :amount, *[1..10] %>
+      <%= f.hidden_field :item_id, :value => @item.id %>
+      <%= f.submit 'カートに入れる' %>
+    </div>
+  </div>
+  <% end %>
+</div>

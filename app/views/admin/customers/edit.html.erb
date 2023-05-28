@@ -1,0 +1,59 @@
+<%= render 'admin/list' %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h4><strong><%= @customer.full_name %></strong>さんの<strong>会員情報編集</strong></h4>
+    </div>
+  </div>
+
+  <%= form_with model: @customer, url: admin_customer_path do |f| %>
+  <div class="row">
+    <div class="col-2">
+      <p>会員ID</p>
+    </div>
+    <div class="col-10">
+      <p><%= @customer.id %></p>
+    </div>
+  </div>
+
+  <div claas="row">
+    <div class="form-inline">
+      <div class="col-2">
+        <p>氏名</p>
+        <p>フリガナ</p>
+      </div>
+      <div class="col-auto">
+        <p><%= f.text_field :first_name, autofocus: true %></p>
+        <p><%= f.text_field :first_name_kana, autofocus: true %></p>
+      </div>
+      <div class="col-auto">
+        <p><%= f.text_field :last_name, autofocus: true %></p>
+        <p><%= f.text_field :last_name_kana, autofocus: true %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 mt-4">
+       <p>郵便番号</p>
+       <p>住所</p>
+       <p>電話番号</p>
+       <p>メールアドレス</p>
+       <p>会員ステータス</p>
+    </div>
+    <div class="col-10">
+      <p><%= f.text_field :postal_code, autofocus: true %></p>
+      <p><%= f.text_field :address, autofocus: true %></p>
+      <p><%= f.text_field :telephone_number, autofocus: true %></p>
+      <p><%= f.text_field :email, autofocus: true %></p>
+    　<label for="r_male">有効
+    　  <input id="1" type="radio" name="gender" value="有効">
+    　</label>
+    　<label for="r_male">退会
+    　  <input id="1" type="radio" name="gender" value="退会">
+    　</label>
+    　<p><%= f.submit "変更を保存する" %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
